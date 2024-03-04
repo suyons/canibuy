@@ -1,0 +1,7 @@
+ALTER USER 'root'@'localhost' IDENTIFIED BY '<PASSWORD>';
+CREATE DATABASE canibuy;
+CREATE DATABASE resumate;
+CREATE USER 'kosmo'@'%' IDENTIFIED BY '<PASSWORD>';
+GRANT ALL PRIVILEGES ON canibuy.* TO 'kosmo'@'%';
+GRANT ALL PRIVILEGES ON resumate.* TO 'kosmo'@'%';
+FLUSH PRIVILEGES;
