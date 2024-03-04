@@ -11,21 +11,9 @@ services:
       - "80:80"
       - "443:443"
     depends_on:
-      - database
       - server
       - data
       - client
-  database:
-    image: mysql:latest
-    container_name: database
-    ports:
-      - "3306:3306"
-    volumes:
-      - ./database/mysql:/var/lib/mysql
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: true
-      TZ: Asia/Seoul
-    command: ["--lower_case_table_names=1"]
   server:
     image: amazoncorretto:21
     container_name: server
